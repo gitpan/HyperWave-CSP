@@ -1,4 +1,4 @@
-HyperWave::CSP version 0.02
+HyperWave::CSP version 0.03.1
 
    This module is NOT FINISHED!
 
@@ -15,30 +15,34 @@ HyperWave::CSP version 0.02
    protocol.
 
 
-   Anybody who wants to poke at it is welcome.  Submitting fixes and
-   patches is even MORE welcome.  Even if you don't want to program,
-   the quickest way of finding about new releases is to tell me you're
-   using it and I'll add you to my list of people to be notified.
-
-
 INSTALLING
-
    To install it:
       perl Makefile.pl
       make
       make test
       make install
 
-DOCS
 
+DOCS
    There's .pod form documentation all through the source.  If you want
    to see it in a different format, check the docs/ subdirectory.
 
+
 KNOWN BUGS
-   Apparently the 'make install' tries to put Message.pm into the
-   HyperWave/ directory instead of HyperWave/CSP/ where it belongs.
-   Just move it.
+   Just that it's unfinished.
+
+
+DEVELOPING
+   Anybody who wants to poke at it is welcome.  Submitting fixes and
+   patches is even MORE welcome.
+
+   If you're interested in what's going on, subscribe to the
+   development list.  Just mail hw-perl-request@tertius.net.au with
+   'subscribe' (no quotes) in the message.  It's standard Majordomo,
+   or just poke me <gossamer@tertius.net.au> if it doesn't work.
+
 
 CREDITS
    Andrew Pam <xanni@xanadu.net>
    Amarendranath Vadlamudi <nath@isr.umd.edu>
+

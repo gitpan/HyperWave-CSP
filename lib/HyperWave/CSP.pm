@@ -29,7 +29,7 @@ require 'dumpvar.pl';
 @ISA = qw(Exporter);
 @EXPORT = qw( Default_CSP_PORT );
 @EXPORT_OK = qw();
-$VERSION = "0.03";
+$VERSION = "0.03.1";
 
 #
 # Debug Levels:

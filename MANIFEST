@@ -1,8 +1,8 @@
-CSP.pm
 Changes
 MANIFEST
 Makefile.PL
-Message.pm
+lib/HyperWave/CSP.pm
+lib/HyperWave/CSP/Message.pm
 README
 TODO
 test.pl

@@ -1,7 +1,10 @@
 Revision history for Perl extension HyperWave::CSP.
 
-0.03  Fri Mar 20 21:24:01 EST 1998
+0.03.1 Sun Apr  5 17:13:33 EST 1998
+  - Finally fixed the install bug - everything ends up in the
+  right directories.
 
+0.03  Fri Mar 20 21:24:01 EST 1998
    - Fixed up some documentation, mastly README and the
    copyright notices.
 
