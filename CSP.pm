@@ -1,8 +1,14 @@
 package HyperWave::CSP;
 #
 # Perl interface to the HyperWave server
+# 
+# Copyright (c) 1998 Bek Oberin.  All rights reserved.
+# 
+# This program is free software; you can redistribute it and/or modify
+# it under the same terms as Perl itself.
+# 
 #
-# Last updated by gossamer on Sun Mar  1 18:32:50 EST 1998
+# Last updated by gossamer on Fri Mar 20 21:24:44 EST 1998
 #
 
 use strict;
@@ -23,7 +29,7 @@ require 'dumpvar.pl';
 @ISA = qw(Exporter);
 @EXPORT = qw( Default_CSP_PORT );
 @EXPORT_OK = qw();
-$VERSION = "0.02";
+$VERSION = "0.03";
 
 #
 # Debug Levels:
@@ -58,10 +64,10 @@ Perl.
 
 my $Default_CSP_Port = 418;
 
-my $Client_Info = "0.02";
+my $Client_Info = "Perl Module HyperWave::CSP v$VERSION";
 
 # Which version of the HyperWave protocol we recognize.
-my $Protocol_Version = "0.02";
+my $Protocol_Version = "717L";
 
 # Hyperwave message numbers
 my %MESSAGE = (
@@ -444,7 +450,7 @@ sub get_objnum_by_name {
 
    ($self->{"server_error"}, $count, my $tmp, $objids) = 
       $message->data =~ /^(\d+) (\d+)( (.*))?$/;
-   if ($self->{"error"}) {
+   if ($self->{"server_error"}) {
       $self->{"error"} = "0.02";
       return 0;
    }
@@ -458,7 +464,6 @@ sub get_objnum_by_name {
       $self->{"error"} = "0.02";
       return 0;
    }
-
    return $objids;
 
 }
@@ -663,7 +668,7 @@ sub get_html {
 
          warn "get_html:  we think it's a picture at '$dest'\n" if $DEBUG > 2;
 
-         substr($html, hex($endpos), 0) = "0.02"$dest\"";
+         substr($html, hex($endpos), 0) = "0.02\"$dest\"";
       } elsif ($attributes{'Hint'}) {
          # external link
          my $url;
@@ -672,7 +677,7 @@ sub get_html {
          warn "get_html:  we think it's an external URL to '$url'\n" if $DEBUG > 2;
 
          substr($html, hex($endpos), 0) = "0.02";
-         substr($html, hex($startpos), 0) = "0.02"$url\">";
+         substr($html, hex($startpos), 0) = "0.02\"$url\">";
       } elsif ($attributes{'Dest'}) {
          # internal links
          my $url = $self->get_url(hex($attributes{'Dest'}));
@@ -680,7 +685,7 @@ sub get_html {
          warn "get_html:  we think it's an internal link to '$url'\n" if $DEBUG > 2;
          
          substr($html, hex($endpos), 0) = "0.02";
-         substr($html, hex($startpos), 0) = "0.02"$url\">";
+         substr($html, hex($startpos), 0) = "0.02\"$url\">";
       } elsif ($attributes{'Dest'} eq 'Anchor') {
          # external link
          my $url = $self->get_url(hex($attributes{'Dest'}));
@@ -688,14 +693,14 @@ sub get_html {
          warn "get_html:  we think it's an external anchor to '$url'\n" if $DEBUG > 2;
 
          substr($html, hex($endpos), 0) = "0.02";
-         substr($html, hex($startpos), 0) = "0.02"$url\">";
+         substr($html, hex($startpos), 0) = "0.02\"$url\">";
       } else {
          # Umm??
          $self->{"error"} = "0.02";
          warn "get_html:  unknown link:\n" if $DEBUG;
 
          substr($html, hex($endpos), 0) = "0.02";
-         substr($html, hex($startpos), 0) = "0.02"???\">";
+         substr($html, hex($startpos), 0) = "0.02\"???\">";
       }
 
    }
@@ -1346,7 +1351,7 @@ sub _hw_read {
       }
       $length_to_read -= length($buff1);
       $buffer .= $buff1;
-      warn "_hw_read: read = "0.02" of " . 
+      warn "_hw_read: read = \"0.02\" of " . 
          $length_to_read . "\n" if $DEBUG > 2;
    }
 

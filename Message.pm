@@ -1,8 +1,13 @@
 package HyperWave::CSP::Message;
 #
 # Copes with Messages for HyperWave
+# 
+# Copyright (c) 1998 Bek Oberin.  All rights reserved.
+# 
+# This program is free software; you can redistribute it and/or modify
+# it under the same terms as Perl itself.
 #
-# Last updated by gossamer on Thu Feb 19 13:02:01 EST 1998
+# Last updated by gossamer on Fri Mar 20 21:26:20 EST 1998
 #
 
 #
